@@ -24,7 +24,11 @@ def log(msg):
 def load_price_data() -> pd.DataFrame:
     """加载价格数据 - 宽表格式"""
     log("加载价格数据...")
-    df = pd.read_csv(DATA_DIR / "history_hs300_sample.csv")
+    # 优先读取完整数据，否则用sample
+    csv_path = DATA_DIR / "history_hs300_full.csv" if (DATA_DIR / "history_hs300_full.csv").exists() else DATA_DIR / "history_hs300_sample.csv"
+    log(f"  读取文件: {csv_path.name}")
+
+    df = pd.read_csv(csv_path)
     df['date'] = pd.to_datetime(df['date'])
     df['close'] = pd.to_numeric(df['close'], errors='coerce')
 
@@ -74,10 +78,6 @@ class SimpleBacktester:
                 continue
 
             # 过滤有数据的股票
-            day_prices = price_df.loc[date, selected] if date in price_df.index else None
-            if day_prices is None:
-                continue
-
             valid_stocks = [s for s in selected if s in price_df.columns and pd.notna(price_df.loc[date, s])]
             if not valid_stocks:
                 continue
@@ -151,23 +151,6 @@ class SimpleBacktester:
 
 # ============ 策略定义 ============
 
-def select_by_volume(date, price_df, n=20):
-    """放量策略：当日成交量最大的"""
-    if date not in price_df.index:
-        return []
-    # 简单用收盘价变化率来模拟放量（价格变动大的成交量可能大）
-    day_data = price_df.loc[date].dropna()
-    return day_data.sort_values(ascending=False).head(n).index.tolist()
-
-
-def select_by_price_level(date, price_df, n=20):
-    """低估值（用价格最低的模拟）"""
-    if date not in price_df.index:
-        return []
-    day_data = price_df.loc[date].dropna()
-    return day_data.sort_values(ascending=True).head(n).index.tolist()
-
-
 def select_momentum(date, price_df, lookback=20, n=20):
     """动量策略：过去N日涨幅最大的"""
     if date not in price_df.index:
@@ -204,15 +187,7 @@ def select_reversal(date, price_df, lookback=20, n=20):
     return returns.head(n).index.tolist()
 
 
-def select_high_close(date, price_df, n=20):
-    """持有高价股策略"""
-    if date not in price_df.index:
-        return []
-    day_data = price_df.loc[date].dropna()
-    return day_data.sort_values(ascending=False).head(n).index.tolist()
-
-
-def select_low_close(date, price_df, n=20):
+def select_low_price(date, price_df, n=20):
     """持有低价股策略"""
     if date not in price_df.index:
         return []
@@ -220,10 +195,26 @@ def select_low_close(date, price_df, n=20):
     return day_data.sort_values(ascending=True).head(n).index.tolist()
 
 
+def select_high_price(date, price_df, n=20):
+    """持有高价股策略"""
+    if date not in price_df.index:
+        return []
+    day_data = price_df.loc[date].dropna()
+    return day_data.sort_values(ascending=False).head(n).index.tolist()
+
+
+def select_random(date, price_df, n=20):
+    """随机选股（作为基准）"""
+    if date not in price_df.index:
+        return []
+    day_data = price_df.loc[date].dropna()
+    return day_data.sample(min(n, len(day_data)), random_state=42).index.tolist()
+
+
 def run_all_strategies():
     """运行所有策略"""
     log("="*60)
-    log("选股策略回测系统")
+    log("选股策略回测系统 v2")
     log("="*60)
 
     # 加载数据
@@ -241,10 +232,12 @@ def run_all_strategies():
     strategies = [
         ("1.动量(20日)", lambda d, p: select_momentum(d, p, 20)),
         ("2.动量(60日)", lambda d, p: select_momentum(d, p, 60)),
-        ("3.反转(20日)", lambda d, p: select_reversal(d, p, 20)),
-        ("4.反转(60日)", lambda d, p: select_reversal(d, p, 60)),
-        ("5.持有高价股", lambda d, p: select_high_close(d, p)),
-        ("6.持有低价股", lambda d, p: select_low_close(d, p)),
+        ("3.动量(120日)", lambda d, p: select_momentum(d, p, 120)),
+        ("4.反转(20日)", lambda d, p: select_reversal(d, p, 20)),
+        ("5.反转(60日)", lambda d, p: select_reversal(d, p, 60)),
+        ("6.持有低价股", lambda d, p: select_low_price(d, p)),
+        ("7.持有高价股", lambda d, p: select_high_price(d, p)),
+        ("8.随机选股(基准)", lambda d, p: select_random(d, p)),
     ]
 
     # 运行
@@ -268,13 +261,13 @@ def run_all_strategies():
         df = pd.DataFrame(results)
         df = df.sort_values('annual_return', ascending=False)
 
-        print("\n" + "="*80)
-        print(f"{'策略':<20} {'总收益':>10} {'年化':>10} {'夏普':>8} {'最大回撤':>10} {'期末资产':>15}")
-        print("-"*80)
+        print("\n" + "="*85)
+        print(f"{'策略':<22} {'总收益':>10} {'年化':>10} {'夏普':>8} {'最大回撤':>10} {'期末资产':>15}")
+        print("-"*85)
         for _, r in df.iterrows():
-            print(f"{r['strategy_name']:<20} {r['total_return']:>10.2%} {r['annual_return']:>10.2%} "
+            print(f"{r['strategy_name']:<22} {r['total_return']:>10.2%} {r['annual_return']:>10.2%} "
                   f"{r['sharpe_ratio']:>8.2f} {r['max_drawdown']:>10.2%} {r['final_value']:>15,.0f}")
-        print("="*80)
+        print("="*85)
 
         # 保存
         OUTPUT_DIR.mkdir(exist_ok=True)

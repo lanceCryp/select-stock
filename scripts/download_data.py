@@ -15,7 +15,7 @@ import time
 
 # 配置
 DATA_DIR = Path("data")
-START_DATE = "2023-01-01"  # 拉取 1 年数据用于回测
+START_DATE = "2022-01-01"  # 拉取 3 年数据用于回测
 END_DATE = datetime.now().strftime("%Y-%m-%d")
 
 # 股票池
@@ -271,14 +271,12 @@ def main():
     log(f"合并后股票池大小: {len(all_codes)} 只")
     log("")
 
-    # 3-4. 下载历史行情（先做沪深300，数据量小一点）
-    download_history_data(hs300_codes[:100], "hs300_sample")
+    # 3-4. 下载历史行情（完整沪深300，约300只）
+    download_history_data(hs300_codes, "hs300_full")
     log("")
 
-    # 如果你想下载全部，可以取消下面的注释
-    # download_history_data(zz500_codes[:100], "zz500_sample")
-    # log("")
-    # download_history_data(all_codes[:300], "all_sample")
+    # 可选：下载中证500（需要较长时间，可先跳过）
+    # download_history_data(zz500_codes, "zz500_full")
     # log("")
 
     # 5-7. 财务数据（可选，数据量大，可以先跳过）
