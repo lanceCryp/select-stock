@@ -1,0 +1,10 @@
+{
+  "strategy": "纯LGB",
+  "conditions": "纯LGB",
+  "total_return": -0.5799519109999998,
+  "annual_return": -0.3231622766871437,
+  "sharpe": -0.8048395766418831,
+  "win_rate": 0.25,
+  "max_drawdown": -0.468031675743513,
+  "final_value": 420048.08900000015
+}

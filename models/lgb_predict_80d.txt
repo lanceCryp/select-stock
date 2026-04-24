@@ -1,0 +1,167 @@
+tree
+version=v4
+num_class=1
+num_tree_per_iteration=1
+label_index=0
+max_feature_idx=9
+objective=regression
+feature_names=ret_1d ret_5d ret_20d ma_bull bb_position rsi vol_ratio volatility price_position break_20d
+feature_infos=[-0.37414965986394566:0.20044052863436135] [-0.46841379310344833:1.48854041013269] [-0.55646337904873078:4.034965034965035] [0:1] [-2.1087020718510683:2.0222951791252655] [0:99.999999999116937] [0:12.252780577508609] [0.0026071955431309418:0.1205008957654201] [0:0.99999999997883859] [0:1]
+tree_sizes=3003
+
+Tree=0
+num_leaves=31
+num_cat=0
+split_feature=2 7 1 7 2 7 8 7 7 8 7 7 7 8 1 5 0 6 1 7 1 5 8 2 0 2 6 4 2 1
+split_gain=80.0065 21.0015 19.4857 16.3834 33.7137 10.0362 11.8999 9.9788 9.6292 9.86646 9.26592 7.36128 6.70193 5.8694 6.8773 5.73885 5.54261 5.5277 5.44448 5.01804 4.92144 4.76937 4.74556 4.26481 3.69119 3.44688 3.33412 3.37917 3.61852 3.0485
+threshold=-0.10794981035446453 0.06183993986743095 -0.1230203496727592 0.060550729675890057 -0.25207000854617878 0.020312246562031667 0.27692307436686442 0.071677339871725684 0.035267825808477489 0.040958947202946634 0.044118199314832476 0.082893060637156193 0.025445882238182341 0.31233850962069526 0.061738276968286272 57.021429659958251 0.050969330228507033 0.56139890239778423 0.034306157975952718 0.017381350774561394 0.086924962467297542 74.32719743430259 0.11881070190357217 -0.31758666397498259 0.027039603424966144 -0.012316357799458553 1.5104792744271689 -0.78432896795678497 -0.18069722607556402 0.010965246271328668
+decision_type=2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+left_child=2 5 3 4 10 17 15 8 9 19 12 -3 -1 14 16 20 -10 -2 -19 -4 -7 -8 23 -14 -11 -17 27 28 -21 -18
+right_child=1 11 7 -5 -6 6 21 -9 13 24 -12 -13 22 -15 -16 25 29 18 -20 26 -22 -23 -24 -25 -26 -27 -28 -29 -30 -31
+leaf_value=-0.039578369237191623 -0.039990932468719077 -0.043458867872576995 -0.040483467659756682 -0.04204384349348618 -0.037283759926935729 -0.040321442286798251 -0.041138204287416005 -0.043507804727429662 -0.037957831391635326 -0.040190285093719899 -0.035067172683534001 -0.049327895383185306 -0.015530952844624173 -0.040078107058884115 -0.033189104565143561 -0.036614644123957714 -0.028649496234299611 -0.041992761614035486 -0.040419528357239783 -0.034271278237003169 -0.036697983935999406 -0.040018491266903704 -0.037974013769562269 -0.024339630155603698 -0.038136688088249771 -0.039384828677476891 -0.040914827962117713 -0.03853529907765596 -0.037369157032796675 -0.038149839103032629
+leaf_weight=67 4921 4877 1873 880 2979 30307 90274 1279 7476 21985 271 600 186 2156 967 1789 256 37013 6459 1357 967 10630 50 526 2430 3016 705 3300 3087 126
+leaf_count=67 4921 4877 1873 880 2979 30307 90274 1279 7476 21985 271 600 186 2156 967 1789 256 37013 6459 1357 967 10630 50 526 2430 3016 705 3300 3087 126
+internal_value=-0.0405769 -0.0410504 -0.0388373 -0.0358564 -0.0345215 -0.0409602 -0.0407416 -0.0391519 -0.03903 -0.039438 -0.027041 -0.0441018 -0.0244172 -0.0377394 -0.037168 -0.0399622 -0.0376577 -0.0415792 -0.041759 -0.038142 -0.0402094 -0.0410202 -0.0230841 -0.0220385 -0.0399859 -0.0383534 -0.0376229 -0.0373232 -0.0364232 -0.0317831
+internal_weight=242809 190853 51956 4959 4079 185376 136983 46997 45718 34737 1100 5477 829 10981 8825 36079 7858 48393 43472 10322 31274 100904 762 712 24415 4805 8449 7744 4444 382
+internal_count=242809 190853 51956 4959 4079 185376 136983 46997 45718 34737 1100 5477 829 10981 8825 36079 7858 48393 43472 10322 31274 100904 762 712 24415 4805 8449 7744 4444 382
+is_linear=0
+shrinkage=1
+
+
+end of trees
+
+feature_importances:
+volatility=9
+ret_5d=5
+ret_20d=5
+price_position=4
+ret_1d=2
+rsi=2
+vol_ratio=2
+bb_position=1
+
+parameters:
+[boosting: gbdt]
+[objective: regression]
+[metric: rmse]
+[tree_learner: serial]
+[device_type: cpu]
+[data_sample_strategy: bagging]
+[data: ]
+[valid: ]
+[num_iterations: 500]
+[learning_rate: 0.05]
+[num_leaves: 31]
+[num_threads: 0]
+[seed: 42]
+[deterministic: 0]
+[force_col_wise: 0]
+[force_row_wise: 0]
+[histogram_pool_size: -1]
+[max_depth: -1]
+[min_data_in_leaf: 50]
+[min_sum_hessian_in_leaf: 0.001]
+[bagging_fraction: 0.8]
+[pos_bagging_fraction: 1]
+[neg_bagging_fraction: 1]
+[bagging_freq: 5]
+[bagging_seed: 400]
+[bagging_by_query: 0]
+[feature_fraction: 0.8]
+[feature_fraction_bynode: 1]
+[feature_fraction_seed: 30056]
+[extra_trees: 0]
+[extra_seed: 12879]
+[early_stopping_round: 0]
+[early_stopping_min_delta: 0]
+[first_metric_only: 0]
+[max_delta_step: 0]
+[lambda_l1: 0]
+[lambda_l2: 0]
+[linear_lambda: 0]
+[min_gain_to_split: 0]
+[drop_rate: 0.1]
+[max_drop: 50]
+[skip_drop: 0.5]
+[xgboost_dart_mode: 0]
+[uniform_drop: 0]
+[drop_seed: 17869]
+[top_rate: 0.2]
+[other_rate: 0.1]
+[min_data_per_group: 100]
+[max_cat_threshold: 32]
+[cat_l2: 10]
+[cat_smooth: 10]
+[max_cat_to_onehot: 4]
+[top_k: 20]
+[monotone_constraints: ]
+[monotone_constraints_method: basic]
+[monotone_penalty: 0]
+[feature_contri: ]
+[forcedsplits_filename: ]
+[refit_decay_rate: 0.9]
+[cegb_tradeoff: 1]
+[cegb_penalty_split: 0]
+[cegb_penalty_feature_lazy: ]
+[cegb_penalty_feature_coupled: ]
+[path_smooth: 0]
+[interaction_constraints: ]
+[verbosity: -1]
+[saved_feature_importance_type: 0]
+[use_quantized_grad: 0]
+[num_grad_quant_bins: 4]
+[quant_train_renew_leaf: 0]
+[stochastic_rounding: 1]
+[linear_tree: 0]
+[max_bin: 255]
+[max_bin_by_feature: ]
+[min_data_in_bin: 3]
+[bin_construct_sample_cnt: 200000]
+[data_random_seed: 175]
+[is_enable_sparse: 1]
+[enable_bundle: 1]
+[use_missing: 1]
+[zero_as_missing: 0]
+[feature_pre_filter: 1]
+[pre_partition: 0]
+[two_round: 0]
+[header: 0]
+[label_column: ]
+[weight_column: ]
+[group_column: ]
+[ignore_column: ]
+[categorical_feature: ]
+[forcedbins_filename: ]
+[precise_float_parser: 0]
+[parser_config_file: ]
+[objective_seed: 16083]
+[num_class: 1]
+[is_unbalance: 0]
+[scale_pos_weight: 1]
+[sigmoid: 1]
+[boost_from_average: 1]
+[reg_sqrt: 0]
+[alpha: 0.9]
+[fair_c: 1]
+[poisson_max_delta_step: 0.7]
+[tweedie_variance_power: 1.5]
+[lambdarank_truncation_level: 30]
+[lambdarank_norm: 1]
+[label_gain: ]
+[lambdarank_position_bias_regularization: 0]
+[eval_at: ]
+[multi_error_top_k: 1]
+[auc_mu_weights: ]
+[num_machines: 1]
+[local_listen_port: 12400]
+[time_out: 120]
+[machine_list_filename: ]
+[machines: ]
+[gpu_platform_id: -1]
+[gpu_device_id: -1]
+[gpu_use_dp: 0]
+[num_gpu: 1]
+
+end of parameters
+
+pandas_categorical:null

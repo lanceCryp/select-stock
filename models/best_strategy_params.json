@@ -1,0 +1,14 @@
+{
+  "price_position_thresh": 0.55,
+  "rsi_thresh": 55,
+  "hold_days": 20,
+  "top_n": 20,
+  "commission": 0.0003,
+  "stamp_tax": 0.001,
+  "stop_loss": 0,
+  "position_size": 1.0,
+  "annual_ret": 1099.6138820534343,
+  "sharpe": 6.73781553406338,
+  "max_drawdown": 0.0,
+  "win_rate": 100.0
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "date": "2026-04-24 19:49:06",
+    "version": "v1",
+    "config": {
+      "version": "v_final",
+      "pp_threshold": 0.45000000000000007,
+      "top_n": 3,
+      "hold_days": 55,
+      "rsi_filter": null,
+      "exit_rsi": null,
+      "exit_pp": null
+    },
+    "metrics": {
+      "annual": 0.696375850309775,
+      "sharpe": 1.6229305745899272,
+      "win_rate": 0.6363636363636364,
+      "max_drawdown": -0.12453395962660896,
+      "final_value": 3556601.0735999993
+    }
+  }
+]

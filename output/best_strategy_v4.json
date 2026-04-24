@@ -1,0 +1,9 @@
+{
+  "strategy": "PPprice_positi",
+  "annual_return": 0.6034384609883228,
+  "sharpe": 1.4322636552047592,
+  "win_rate": 0.6363636363636364,
+  "max_drawdown": -0.11719614653772115,
+  "total_return": 2.106620843799999,
+  "final_value": 3106620.843799999
+}

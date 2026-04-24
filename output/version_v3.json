@@ -1,0 +1,18 @@
+{
+  "version": "v3",
+  "date": "2026-04-24",
+  "config": {
+    "predict_days": 20,
+    "momentum_weight": 0,
+    "pp_threshold": 0.5499999999999999,
+    "top_n": 3,
+    "hold_days": 55
+  },
+  "metrics": {
+    "annual": 0.3349602521543087,
+    "sharpe": 1.1066908505867508,
+    "win_rate": 0.6363636363636364,
+    "max_drawdown": -0.1614355281641271,
+    "final_value": 2000891.6966
+  }
+}
