@@ -1,51 +1,51 @@
 [
   {
-    "strategy_name": "1.动量(20日)",
-    "total_return": 1.309284623891407,
-    "annual_return": 0.2086395021909775,
-    "sharpe_ratio": 0.7714128399801942,
-    "max_drawdown": 0.3766249028598863,
-    "final_value": 2309284.623891407,
-    "n_trades": 1060
+    "strategy_name": "S01_动量20日",
+    "total_return": 1.4545459795176834,
+    "annual_return": 0.22544933272085088,
+    "sharpe_ratio": 0.8225255797313248,
+    "max_drawdown": 0.3374126244177235,
+    "final_value": 2454545.9795176834,
+    "n_trades": 1040
   },
   {
-    "strategy_name": "2.动量(60日)",
-    "total_return": 1.288331503433999,
-    "annual_return": 0.20614775999025325,
-    "sharpe_ratio": 0.7291961745062195,
-    "max_drawdown": 0.22587910556091328,
-    "final_value": 2288331.503433999,
-    "n_trades": 1060
+    "strategy_name": "S02_动量60日",
+    "total_return": 1.5777257265128208,
+    "annual_return": 0.2391109577846835,
+    "sharpe_ratio": 0.8204028119428748,
+    "max_drawdown": 0.22587910556091323,
+    "final_value": 2577725.726512821,
+    "n_trades": 1000
   },
   {
-    "strategy_name": "3.动量(120日)",
-    "total_return": 0.13943766901866697,
-    "annual_return": 0.02999615006539713,
-    "sharpe_ratio": 0.2373824067873141,
-    "max_drawdown": 0.33223168170420714,
-    "final_value": 1139437.669018667,
-    "n_trades": 1060
+    "strategy_name": "S03_动量120日",
+    "total_return": 0.2292280597485036,
+    "annual_return": 0.04783799748342199,
+    "sharpe_ratio": 0.30244991262107684,
+    "max_drawdown": 0.3322316817042067,
+    "final_value": 1229228.0597485036,
+    "n_trades": 940
   },
   {
-    "strategy_name": "4.反转(20日)",
-    "total_return": 0.08981015516143781,
-    "annual_return": 0.019663318768014637,
-    "sharpe_ratio": 0.19471460446317307,
-    "max_drawdown": 0.2152976788585476,
-    "final_value": 1089810.1551614378,
-    "n_trades": 1060
+    "strategy_name": "S04_反转20日",
+    "total_return": 0.18259275262432614,
+    "annual_return": 0.03870205694563267,
+    "sharpe_ratio": 0.2759036120165821,
+    "max_drawdown": 0.21529767885854756,
+    "final_value": 1182592.7526243262,
+    "n_trades": 1040
   },
   {
-    "strategy_name": "5.反转(60日)",
-    "total_return": 0.22877017216135725,
-    "annual_return": 0.04774961046029791,
-    "sharpe_ratio": 0.3148122253412074,
-    "max_drawdown": 0.24190149644758677,
-    "final_value": 1228770.1721613572,
-    "n_trades": 1060
+    "strategy_name": "S05_反转60日",
+    "total_return": 0.44767836618211565,
+    "annual_return": 0.08737310039945445,
+    "sharpe_ratio": 0.48929038219131127,
+    "max_drawdown": 0.24190149644758666,
+    "final_value": 1447678.3661821156,
+    "n_trades": 1000
   },
   {
-    "strategy_name": "6.持有低价股",
+    "strategy_name": "S06_低价股",
     "total_return": 0.5525065894595518,
     "annual_return": 0.10472162922320094,
     "sharpe_ratio": 0.82521995430215,
@@ -54,7 +54,7 @@
     "n_trades": 1060
   },
   {
-    "strategy_name": "7.持有高价股",
+    "strategy_name": "S07_高价股",
     "total_return": -0.15110485293705597,
     "annual_return": -0.036411777430656045,
     "sharpe_ratio": -0.029390967971083204,
@@ -63,12 +63,102 @@
     "n_trades": 1060
   },
   {
-    "strategy_name": "8.随机选股(基准)",
-    "total_return": -0.0028347018505159066,
-    "annual_return": -0.0006425241857264119,
-    "sharpe_ratio": 0.08561041135088664,
-    "max_drawdown": 0.36833379069988825,
-    "final_value": 997165.2981494841,
+    "strategy_name": "S08_低波动",
+    "total_return": 0.3038410689974341,
+    "annual_return": 0.06191217840013841,
+    "sharpe_ratio": 0.4932517821471579,
+    "max_drawdown": 0.17498036878453904,
+    "final_value": 1303841.068997434,
+    "n_trades": 1040
+  },
+  {
+    "strategy_name": "S09_高波动",
+    "total_return": 1.5531305450227157,
+    "annual_return": 0.23642414254213806,
+    "sharpe_ratio": 0.8022500535965865,
+    "max_drawdown": 0.2110430723647874,
+    "final_value": 2553130.545022716,
+    "n_trades": 1040
+  },
+  {
+    "strategy_name": "S10_强趋势",
+    "total_return": 1.2184804293932476,
+    "annual_return": 0.1977114785746421,
+    "sharpe_ratio": 0.7622787892054763,
+    "max_drawdown": 0.30538729343268345,
+    "final_value": 2218480.4293932477,
+    "n_trades": 1040
+  },
+  {
+    "strategy_name": "S11_弱趋势",
+    "total_return": 0.3945264701988415,
+    "annual_return": 0.07820266017214794,
+    "sharpe_ratio": 0.4483519617713333,
+    "max_drawdown": 0.18286154430244675,
+    "final_value": 1394526.4701988415,
+    "n_trades": 1040
+  },
+  {
+    "strategy_name": "S12_动量综合",
+    "total_return": 0.8137804361713205,
+    "annual_return": 0.14431998363321785,
+    "sharpe_ratio": 0.5726563341558224,
+    "max_drawdown": 0.317333737340883,
+    "final_value": 1813780.4361713205,
+    "n_trades": 1054
+  },
+  {
+    "strategy_name": "S13_反转综合",
+    "total_return": 0.34424654928473825,
+    "annual_return": 0.06927538440940806,
+    "sharpe_ratio": 0.4101394777813105,
+    "max_drawdown": 0.19116017471018926,
+    "final_value": 1344246.5492847383,
     "n_trades": 1060
+  },
+  {
+    "strategy_name": "S14_高夏普",
+    "total_return": 0.7451694014448114,
+    "annual_return": 0.1343724767813852,
+    "sharpe_ratio": 0.7221359150348015,
+    "max_drawdown": 0.35700869619596154,
+    "final_value": 1745169.4014448114,
+    "n_trades": 1059
+  },
+  {
+    "strategy_name": "S15_借力策略",
+    "total_return": 1.7567477225974748,
+    "annual_return": 0.25809238554085456,
+    "sharpe_ratio": 0.8578627501275577,
+    "max_drawdown": 0.3040371195636324,
+    "final_value": 2756747.7225974747,
+    "n_trades": 1059
+  },
+  {
+    "strategy_name": "S16_动量反转切换",
+    "total_return": 3.2789005475104545,
+    "annual_return": 0.3897706569498711,
+    "sharpe_ratio": 1.2406629706209187,
+    "max_drawdown": 0.16611886008528534,
+    "final_value": 4278900.547510454,
+    "n_trades": 1040
+  },
+  {
+    "strategy_name": "S17_20日突破",
+    "total_return": 0.7863306515632267,
+    "annual_return": 0.14037573060721842,
+    "sharpe_ratio": 0.6789504097944087,
+    "max_drawdown": 0.2705262197470206,
+    "final_value": 1786330.6515632267,
+    "n_trades": 1040
+  },
+  {
+    "strategy_name": "S18_20日破位",
+    "total_return": 0.13196565523046766,
+    "annual_return": 0.02846297228243233,
+    "sharpe_ratio": 0.24519428741121607,
+    "max_drawdown": 0.1703409222396212,
+    "final_value": 1131965.6552304677,
+    "n_trades": 1040
   }
 ]
