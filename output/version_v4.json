@@ -1,0 +1,10 @@
+{
+  "version": "v4",
+  "date": "2026-04-24",
+  "test_results": {
+    "v2_momentum": 0.2470914312402226,
+    "v6_base": 0.5423899730238018,
+    "v4_adaptive": 0.023658466295948477
+  },
+  "conclusion": "v2 remains best, market regime switching ineffective"
+}
